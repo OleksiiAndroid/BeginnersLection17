@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "683172541014",
-    "firebase_url": "https://web-academy-c7123.firebaseio.com",
-    "project_id": "web-academy-c7123",
-    "storage_bucket": "web-academy-c7123.appspot.com"
+    "project_number": "942020916268",
+    "firebase_url": "https://web-academy-6af13.firebaseio.com",
+    "project_id": "web-academy-6af13",
+    "storage_bucket": "web-academy-6af13.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:683172541014:android:1442dd66a1fd47ab",
+        "mobilesdk_app_id": "1:942020916268:android:1442dd66a1fd47ab",
         "android_client_info": {
           "package_name": "ua.com.webacademy.beginnerslection17"
         }
       },
       "oauth_client": [
         {
-          "client_id": "683172541014-k3s0s3lpvq5uqrnukj9nrbk2ttme143t.apps.googleusercontent.com",
+          "client_id": "942020916268-dg8puvcj626u2i3c5red9mp5po1gtthc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "ua.com.webacademy.beginnerslection17",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "683172541014-cl0eiin2kb6fuims04b8b8031jsrb6sa.apps.googleusercontent.com",
+          "client_id": "942020916268-718mvhm3um59tolcd9q6mjkdnthkf1g4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCo0sQuWQMkZhx_NGhefmFVyxcZCR36XaA"
+          "current_key": "AIzaSyD3B11ETIIkIZWpNVpiMbhQmy9gOu2DmsM"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "683172541014-cl0eiin2kb6fuims04b8b8031jsrb6sa.apps.googleusercontent.com",
+              "client_id": "942020916268-718mvhm3um59tolcd9q6mjkdnthkf1g4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

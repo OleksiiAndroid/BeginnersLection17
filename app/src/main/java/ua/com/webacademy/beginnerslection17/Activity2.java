@@ -60,10 +60,10 @@ public class Activity2 extends AppCompatActivity {
             }
         });
 
-        initRooms();
+        initMessages();
     }
 
-    private void initRooms() {
+    private void initMessages() {
         mFirebaseAdapter = new FirebaseRecyclerAdapter<Message, MessageViewHolder>(
                 Message.class,
                 android.R.layout.simple_list_item_2,
