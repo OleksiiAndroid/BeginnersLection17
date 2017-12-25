@@ -1,13 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 27
 
     defaultConfig {
         applicationId "ua.com.webacademy.beginnerslection17"
         minSdkVersion 14
-        targetSdkVersion 25
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
     }
@@ -21,10 +20,10 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.+'
-    compile 'com.android.support:recyclerview-v7:25.+'
-    compile 'com.google.firebase:firebase-database:9.4.0'
-    compile 'com.firebaseui:firebase-ui-database:0.4.0'
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.android.support:recyclerview-v7:27.0.2'
+    compile 'com.google.firebase:firebase-database:11.8.0'
+    compile 'com.firebaseui:firebase-ui-database:2.3.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
