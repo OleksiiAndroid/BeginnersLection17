@@ -2,15 +2,20 @@ package ua.com.webacademy.beginnerslection17;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,19 +53,45 @@ public class MainActivity extends AppCompatActivity {
                 mEditTextDescription.setText(null);
             }
         });
+    }
 
-        initRooms();
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if(mFirebaseAdapter == null){
+            initRooms();
+        }
+
+        mFirebaseAdapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        if(mFirebaseAdapter != null){
+            mFirebaseAdapter.stopListening();
+        }
     }
 
     private void initRooms() {
-        mFirebaseAdapter = new FirebaseRecyclerAdapter<Room, RoomViewHolder>(
-                Room.class,
-                android.R.layout.simple_list_item_2,
-                RoomViewHolder.class,
-                mDatabaseReference.child(FIREBASE_CHILD_ROOMS).orderByKey()) {
+        Query query = mDatabaseReference.child(FIREBASE_CHILD_ROOMS).orderByKey();
+
+        FirebaseRecyclerOptions<Room> options = new FirebaseRecyclerOptions.Builder<Room>()
+                .setQuery(query, Room.class).build();
+
+        mFirebaseAdapter = new FirebaseRecyclerAdapter<Room, RoomViewHolder>(options) {
+
+            @NonNull
+            @Override
+            public RoomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(MainActivity.this).inflate(android.R.layout.simple_list_item_2, parent, false);
+                return new RoomViewHolder(view);
+            }
 
             @Override
-            protected void populateViewHolder(RoomViewHolder holder, Room room, int position) {
+            protected void onBindViewHolder(@NonNull RoomViewHolder holder, int position, @NonNull Room room) {
                 final String key = mFirebaseAdapter.getRef(position).getKey();
 
                 holder.mTextViewName.setText(key);
